@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Finland Ice Hockey Team</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-image: url('finland_team_photo.jpg');
+      background-size: cover;
+      background-position: center;
+      margin: 0;
+      padding: 20px;
+      color: white;
+      text-align: center;
+    }
+
+    #logo {
+      max-width: 200px;
+      margin: 20px auto;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 80%;
+      margin: 20px auto;
+    }
+
+    th, td {
+      padding: 10px;
+      border: 1px solid white;
+    }
+
+    th {
+      background-color: #003580;
+    }
+  </style>
+</head>
+<body>
+  <img id="logo" src="finland_ice_hockey_logo.png" alt="Finland Ice Hockey Logo">
+
+  <table>
+    <thead>
+      <tr>
+        <th>Number</th>
+        <th>Name</th>
+        <th>POS</th>
+        <th>SHOOTS / CATCHES</th>
+        <th>CLUB</th>
+      </tr>
+    </thead>
+    <tbody id="playersTable">
+      <!-- Player details will be added here -->
+    </tbody>
+  </table>
+
+  <script>
+    const playersData = [
+      { number: 1, name: 'KOKKO Niklas', pos: 'GK', shoots: 'L', club: 'Karpat Oulu' },
+      { number: 1, name: 'KOKKO Niklas', pos: 'GK', shoots: 'L', club: 'Karpat Oulu' },
+      { number: 2, name: 'SUOMI Jimi', pos: 'D', shoots: 'L', club: 'TPS Turku' },
+      { number: 3, name: 'SALIN Otto', pos: 'D', shoots: 'R', club: 'HIFK Helsinki' },
+      { number: 4, name: 'RUOTSALAINEN Ville', pos: 'D', shoots: 'L', club: 'KalPa Kuopio' },
+      { number: 6, name: 'ERVASTI Kalle', pos: 'D', shoots: 'R', club: 'Lukko Rauma' },
+      { number: 7, name: 'MALINEN Aleksi', pos: 'D', shoots: 'L', club: 'JYP Jyvaskyla' },
+      { number: 10, name: 'VILEN Topias', pos: 'D', shoots: 'L', club: 'Pelicans Lahti' },
+      { number: 13, name: 'RONNI Topi', pos: 'F', shoots: 'L', club: 'Tappara Tampere' },
+      { number: 15, name: 'HAMEENAHO Lenni', pos: 'F', shoots: 'R', club: 'Assat Pori' },
+      { number: 18, name: 'MIETTINEN Verner', pos: 'F', shoots: 'L', club: 'Fargo Force' },
+      { number: 21, name: 'HEIMOSALMI Aleksi', pos: 'D', shoots: 'R', club: 'Assat Pori' },
+      { number: 22, name: 'NYMAN Jani', pos: 'F', shoots: 'L', club: 'Ilves Tampere' },
+      { number: 23, name: 'VAISANEN Kalle', pos: 'F', shoots: 'R', club: 'TPS Turku' },
+      { number: 24, name: 'KOIVUNEN Ville', pos: 'F', shoots: 'L', club: 'Karpat Oulu' },
+      { number: 25, name: 'KAPANEN Konsta', pos: 'F', shoots: 'L', club: 'KalPa Kuopio' },
+      { number: 27, name: 'KAPANEN Oliver', pos: 'F', shoots: 'R', club: 'KalPa Kuopio' },
+      { number: 28, name: 'PAIVARINTA Sami', pos: 'F', shoots: 'L', club: 'Lukko Rauma' },
+      { number: 29, name: 'HUUHTANEN Niko', pos: 'F', shoots: 'R', club: 'Jukurit Mikkeli' },
+      { number: 30, name: 'KOSKENVUO Aku', pos: 'GK', shoots: 'L', club: 'Harvard University' },
+      { number: 31, name: 'LAMPINEN Jani', pos: 'GK', shoots: 'L', club: 'Kiekko-Espoo' },
+      { number: 33, name: 'LAMBERT Brad', pos: 'F', shoots: 'R', club: 'Winnipeg Jets' },
+      { number: 34, name: 'KASKIMAKI Aleksanteri', pos: 'F', shoots: 'L', club: 'HIFK Helsinki' },
+      { number: 37, name: 'KEMELL Joakim', pos: 'F', shoots: 'R', club: 'JYP Jyvaskyla' }
+    ];
+
+    // Function to display players in a table
+    function displayPlayers() {
+      const playersTable = document.getElementById('playersTable');
+
+      playersData.forEach(player => {
+        const row = playersTable.insertRow();
+        row.innerHTML = `
+          <td>${player.number}</td>
+          <td>${player.name}</td>
+          <td>${player.pos}</td>
+          <td>${player.shoots}</td>
+          <td>${player.club}</td>
+        `;
+      });
+    }
+
+    // Call the function to display players when the page loads
+    window.onload = displayPlayers;
+  </script>
+</body>
+</html>
